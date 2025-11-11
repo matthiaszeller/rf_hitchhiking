@@ -1,0 +1,15 @@
+rf\_hitchhike.sp
+================
+
+.. automodule:: rf_hitchhike.sp
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   fft
+   resample
+   shift

@@ -1,0 +1,14 @@
+rf\_hitchhike.sp.resample
+=========================
+
+.. automodule:: rf_hitchhike.sp.resample
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      decimate
+      downsample
+      multistage_decimate
+   

@@ -1,0 +1,13 @@
+rf\_hitchhike.schemas
+=====================
+
+.. automodule:: rf_hitchhike.schemas
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Recording
+      RecordingMetadata
+   
