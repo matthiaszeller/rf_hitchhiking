@@ -1,0 +1,12 @@
+
+# Python
+__pycache__/
+*.py[ocd]
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
