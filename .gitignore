@@ -9,3 +9,12 @@ __pycache__/
 
 # Jupyter
 .ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Docs
+docs/_build/
+docs/api/generated/
+docs/.doctrees/
+docs/_autosummary/
+docs/_static/.doctrees/
+docs/_static/.jupyter_cache/
