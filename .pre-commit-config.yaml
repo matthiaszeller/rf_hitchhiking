@@ -33,4 +33,6 @@ repos:
     -   id: flake8
         name: flake8
         types: [python]
-        args: ['--max-line-length=110']
+        args:
+          - --max-line-length=110
+          - --ignore=E741  # ambiguous variable name I
