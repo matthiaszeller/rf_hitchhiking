@@ -21,10 +21,10 @@ These concepts form the conceptual backbone of SDR operation.
 
 ## 🧠 DSP Fundamentals (Quick Reference)
 
-- **Demodulation:** extracting the baseband (audio or digital) signal from the I/Q stream.  
-- **Filtering:** isolating specific frequency ranges or rejecting interference.  
-- **Decimation:** lowering sample rate after filtering to save computation.  
-- **FFT / Spectrum display:** transforming I/Q data into frequency-domain power estimates.  
+- **Demodulation:** extracting the baseband (audio or digital) signal from the I/Q stream.
+- **Filtering:** isolating specific frequency ranges or rejecting interference.
+- **Decimation:** lowering sample rate after filtering to save computation.
+- **FFT / Spectrum display:** transforming I/Q data into frequency-domain power estimates.
 - **Decoding:** interpreting the demodulated data (e.g., audio, telemetry, digital packets).
 
 GNU Radio and similar frameworks let you build these stages graphically or in code.
@@ -32,7 +32,7 @@ GNU Radio and similar frameworks let you build these stages graphically or in co
 
 ## Hardware Setup
 
-This document summarizes the components and antennas included in your **radio frequency exploration kit** based on the **Nooelec NESDR SMArt v5**, along with the **LaNA Low Noise Amplifier** and **Flamingo+ FM Bandstop Filter**.  
+This document summarizes the components and antennas included in your **radio frequency exploration kit** based on the **Nooelec NESDR SMArt v5**, along with the **LaNA Low Noise Amplifier** and **Flamingo+ FM Bandstop Filter**.
 Together, these components allow you to explore, analyze, and decode a wide range of RF signals from **100 kHz to 1.75 GHz**.
 
 ### 📦 Components Overview
@@ -61,28 +61,28 @@ To minimize interference and maximize sensitivity:
 Antenna → Flamingo+ FM Filter → LaNA (LNA) → NESDR SMArt v5 → USB (Computer)
 ```
 
-- **Filter first:** protects the LNA and SDR from powerful FM transmitters.  
-- **LNA next:** amplifies weak signals with low added noise.  
+- **Filter first:** protects the LNA and SDR from powerful FM transmitters.
+- **LNA next:** amplifies weak signals with low added noise.
 - **SDR last:** digitizes the clean, amplified signal for analysis.
 
 
 ### 🔌 Power Notes for LaNA
 
-- **Via bias-tee (preferred):** if your SDR supports bias-tee (3–5 V DC).  
-- **Via MicroUSB:** use included adapter (3.3–5.5 V DC).  
-- **Via DC barrel adapter:** optional input; use only one power source at a time.  
+- **Via bias-tee (preferred):** if your SDR supports bias-tee (3–5 V DC).
+- **Via MicroUSB:** use included adapter (3.3–5.5 V DC).
+- **Via DC barrel adapter:** optional input; use only one power source at a time.
 - Avoid long-term operation above 5.5 V DC.
 
 
 ### 🧠 Summary
 
 This setup gives you a **versatile and high-performance RF exploration platform**, ideal for:
-- Spectrum analysis  
-- Decoding digital and analog radio signals  
-- ADS-B aircraft tracking  
-- Weather satellite imagery  
-- ISM/IoT device signal inspection  
-- Ham radio monitoring  
+- Spectrum analysis
+- Decoding digital and analog radio signals
+- ADS-B aircraft tracking
+- Weather satellite imagery
+- ISM/IoT device signal inspection
+- Ham radio monitoring
 
 *Designed and manufactured by Nooelec (USA/Canada).*
 
@@ -113,22 +113,22 @@ These are fundamental; everything else builds on top of them.
 
 > 📘 What Is RTL-SDR?
 >
-> **RTL-SDR** stands for *Realtek Software Defined Radio*.  
+> **RTL-SDR** stands for *Realtek Software Defined Radio*.
 It refers to a family of inexpensive USB TV tuners based on the **RTL2832U** demodulator chip that, through open-source drivers, can expose *raw I/Q samples* (complex baseband radio data) to the computer instead of decoding TV signals.
 >
-> This discovery (by Antti Palosaari, Eric Fry, and Osmocom developers) effectively turned a $20 TV dongle into a **wideband radio receiver**.  
+> This discovery (by Antti Palosaari, Eric Fry, and Osmocom developers) effectively turned a $20 TV dongle into a **wideband radio receiver**.
 > All “RTL-SDR” compatible devices, including your **NESDR SMArt v5**, follow this **de facto protocol** implemented by the **`librtlsdr`** driver.
 >
 > In practice:
 > - The **RTL2832U** handles digitization and USB data streaming.
 > - The **R820T2 tuner** selects the frequency and gain.
 > - The **driver** (via USB) streams I/Q samples to your computer for demodulation and visualization.
-> 
+>
 > There is no separate “protocol” in the network sense — the term *RTL-SDR protocol* simply refers to the standardized USB communication interface used by `librtlsdr`.
 
 #### 🧩 Conceptual Overview
 
-When you run tools like `rtl_fm` or `SDR++`, they talk to the RTL2832U through `librtlsdr`.  
+When you run tools like `rtl_fm` or `SDR++`, they talk to the RTL2832U through `librtlsdr`.
 This communication controls:
 
 - **Tuning frequency** (via tuner chip)
@@ -136,7 +136,7 @@ This communication controls:
 - **Gain** (RF amplification level)
 - **Data streaming** (continuous I/Q samples over USB)
 
-Those raw I/Q streams represent the **complex envelope** of the received signal — the foundation for all SDR processing.  
+Those raw I/Q streams represent the **complex envelope** of the received signal — the foundation for all SDR processing.
 Demodulators, decoders, and visualizers all operate on these samples.
 
 
